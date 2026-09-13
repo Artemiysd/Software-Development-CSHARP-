@@ -9,7 +9,6 @@ using SixLabors.ImageSharp.PixelFormats;
 
 class Program
 {
-    // Корни цветовых слов и соответствующие цвета
     static Dictionary<string, Rgba32> ColorMap =
         new(StringComparer.OrdinalIgnoreCase)
         {
@@ -43,7 +42,6 @@ class Program
             { "бирюз", new Rgba32(64, 224, 208) }
         };
 
-    // Допустимые окончания цветовых прилагательных
     static HashSet<string> ColorEndings = new()
     {
         "ый",
@@ -133,10 +131,8 @@ class Program
             Console.WriteLine();
             Console.WriteLine("Файл успешно прочитан.");
 
-            // Приводим текст к нижнему регистру
             text = text.ToLower();
 
-            // Удаляем знаки препинания
             text = Regex.Replace(
                 text,
                 @"[^\p{L}\p{N}\s]",
@@ -155,7 +151,7 @@ class Program
             List<Rgba32> foundColors = new();
             List<string> foundColorNames = new();
             List<string> foundWords = new();
-            // Поиск цветов
+
             foreach (string word in words)
             {
                 foreach (var color in ColorMap)
@@ -191,7 +187,6 @@ class Program
                 return;
             }
 
-            // Статистика
             Dictionary<string, int> statistics =
                 new(StringComparer.OrdinalIgnoreCase);
 
@@ -218,7 +213,6 @@ class Program
                 );
             }
 
-            // Выбор визуализации
             Console.WriteLine();
             Console.WriteLine("Выберите визуализацию:");
             Console.WriteLine("1 - Линия");
@@ -266,7 +260,6 @@ class Program
             using Image<Rgba32> image =
                 new(width, height);
 
-            // Белый фон
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
@@ -276,7 +269,6 @@ class Program
                 }
             }
 
-            // Рисуем квадраты
             for (int i = 0; i < foundColors.Count; i++)
             {
                 int row = i / columns;
@@ -345,7 +337,6 @@ class Program
         }
     }
 
-    // Проверяет, является ли слово формой цветового слова
     static bool IsColorWord(string word, string root)
     {
         if (!word.StartsWith(
@@ -357,14 +348,11 @@ class Program
 
         string ending = word.Substring(root.Length);
 
-        // Если после корня ничего нет,
-        // слово не считаем цветом
         if (string.IsNullOrEmpty(ending))
         {
             return false;
         }
 
-        // Проверяем допустимое окончание
         return ColorEndings.Contains(ending);
     }
 }
