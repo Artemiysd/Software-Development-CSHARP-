@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sentences>
+    <Sentence>
+      <word>Peter</word>
+      <punctuation> </punctuation>
+      <word>likes</word>
+      <punctuation> </punctuation>
+      <word>cats</word>
+      <punctuation>.</punctuation>
+    </Sentence>
+    <Sentence>
+      <word>John</word>
+      <punctuation> </punctuation>
+      <word>loves</word>
+      <punctuation> </punctuation>
+      <word>dogs</word>
+      <punctuation>.</punctuation>
+    </Sentence>
+    <Sentence>
+      <word>Mary</word>
+      <punctuation> </punctuation>
+      <word>likes</word>
+      <punctuation> </punctuation>
+      <word>fish</word>
+      <punctuation>?</punctuation>
+    </Sentence>
+  </Sentences>
+</Text>

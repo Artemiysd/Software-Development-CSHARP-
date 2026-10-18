@@ -1,0 +1,3 @@
+Peter likes cats.
+John loves dogs.
+Mary likes fish?

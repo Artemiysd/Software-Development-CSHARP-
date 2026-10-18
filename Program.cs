@@ -250,7 +250,6 @@ class Program
             int rows = (int)Math.Ceiling(
                 foundColors.Count / (double)columns
             );
-
             int width =
                 columns * squareSize + margin * 2;
 
