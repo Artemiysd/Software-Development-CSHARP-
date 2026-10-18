@@ -9,11 +9,9 @@ namespace TextTokenisation;
 [XmlType("Sentence")]
 public class Sentence
 {
-    // Используется программой, но не сериализуется напрямую.
     [XmlIgnore]
     public List<IToken> Tokens { get; set; } = new();
 
-    // Сериализуемая коллекция конкретных типов.
     [XmlElement("word", typeof(Word))]
     [XmlElement("punctuation", typeof(Punctuation))]
     public List<object> XmlTokens
